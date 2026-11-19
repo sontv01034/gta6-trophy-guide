@@ -1,0 +1,116 @@
+/* Leonida Trophy Guide — own look: deep teal night, Vice sunset accents, system type. */
+:root {
+  --bg: #0d1b1e;
+  --panel: #132a2e;
+  --panel2: #173338;
+  --ink: #eef6f3;
+  --muted: #a9c2bb;
+  --line: #2b4a4f;
+  --accent: #ff9e5e;
+  --accent2: #f25c8a;
+  --gold: #f5c542;
+  --silver: #c8d2d6;
+  --bronze: #d08a4e;
+  --platinum: #9be7ff;
+  --danger: #e05d5d;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+.masthead {
+  background: linear-gradient(135deg, #0d1b1e 0%, #173338 55%, #5c2a4a 130%);
+  border-bottom: 3px solid var(--accent);
+  padding: 28px 20px 18px;
+}
+.masthead-inner { max-width: 1180px; margin: 0 auto; }
+h1 { margin: 0 0 6px; font-size: 2rem; letter-spacing: 0.02em; }
+.tagline { margin: 0 0 14px; color: var(--muted); max-width: 720px; }
+.progress { max-width: 720px; }
+.progress-bar { background: #0a1416; border: 1px solid var(--line); border-radius: 999px; height: 14px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.2s; }
+.progress-text { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
+.views { margin-top: 14px; display: flex; gap: 8px; }
+.view-btn, .filter-btn, .io button {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.view-btn.active, .filter-btn.active { background: var(--accent); color: #1a1206; border-color: var(--accent); font-weight: 700; }
+main { max-width: 1180px; margin: 0 auto; padding: 18px 20px 40px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+#searchBox {
+  flex: 1 1 220px; padding: 9px 12px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink); font-size: 1rem;
+}
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.spoiler-toggle { display: flex; align-items: center; gap: 6px; font-weight: 600; cursor: pointer; }
+.spoiler-toggle .hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+.io { display: flex; gap: 6px; margin-left: auto; }
+.io button.danger { border-color: var(--danger); color: #f0a8a8; }
+.notice { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent2); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; }
+.roadmap { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin-bottom: 18px; }
+.roadmap h2 { margin-top: 0; }
+.roadmap-intro { color: var(--muted); }
+.stages { padding-left: 22px; margin: 0; }
+.stages li { margin-bottom: 10px; }
+.stages li strong { color: var(--accent); }
+.columns { display: grid; grid-template-columns: minmax(0, 7fr) minmax(300px, 5fr); gap: 18px; align-items: start; }
+.list-col h2, .detail-col h2 { margin: 0 0 4px; }
+.list-meta { color: var(--muted); margin: 0 0 10px; font-size: 0.9rem; }
+.trophy-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.trophy-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 12px; cursor: pointer; text-align: left; width: 100%;
+  color: var(--ink); font: inherit;
+}
+.trophy-row:hover { border-color: var(--accent); }
+.trophy-row.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.trophy-row.earned { opacity: 0.72; }
+.trophy-row input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); flex: none; cursor: pointer; }
+.trophy-main { flex: 1; min-width: 0; }
+.trophy-name { font-weight: 700; }
+.trophy-row.earned .trophy-name { text-decoration: line-through; }
+.trophy-desc { color: var(--muted); font-size: 0.92rem; }
+.trophy-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.grade-badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.grade-platinum { background: var(--platinum); color: #062a38; }
+.grade-gold { background: var(--gold); color: #3a2a00; }
+.grade-silver { background: var(--silver); color: #263238; }
+.grade-bronze { background: var(--bronze); color: #2e1a08; }
+.kind-tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.78rem; border: 1px solid var(--line); color: var(--muted); text-transform: capitalize; }
+.missable-flag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: #5c1f2a; color: #ffb3c0; }
+.hidden-flag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.78rem; border: 1px dashed var(--line); color: var(--muted); }
+.detail-col { position: sticky; top: 12px; }
+.detail-empty { color: var(--muted); background: var(--panel); border: 1px dashed var(--line); border-radius: 10px; padding: 18px; margin: 0; }
+.detail { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.detail-grades { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.detail h2 { font-size: 1.35rem; }
+.detail-desc { color: var(--muted); font-style: italic; }
+.detail-count { font-weight: 700; color: var(--accent); }
+.detail h3 { margin: 14px 0 4px; font-size: 1rem; color: var(--accent); }
+.detail-guide { margin: 0; }
+.detail-source { font-size: 0.9rem; color: var(--muted); word-break: break-word; }
+.detail-source a { color: var(--platinum); }
+.detail-stage { font-size: 0.9rem; color: var(--muted); }
+.detail-earned { display: flex; gap: 8px; align-items: center; font-weight: 600; cursor: pointer; margin-top: 12px; }
+.detail-earned input { width: 18px; height: 18px; accent-color: var(--accent); }
+.sources { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 16px; }
+.sources h2 { font-size: 1.1rem; }
+.sources a { color: var(--platinum); }
+.disclaimer { color: var(--muted); font-size: 0.85rem; }
+.empty-note { color: var(--muted); background: var(--panel); border: 1px dashed var(--line); border-radius: 10px; padding: 18px; }
+@media (max-width: 860px) {
+  .columns { grid-template-columns: 1fr; }
+  .detail-col { position: static; }
+}

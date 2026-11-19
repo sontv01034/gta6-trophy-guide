@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<meta name="description" content="A complete offline guide and checklist tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI, with a platinum roadmap, missable flags and a cited guide for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>Leonida Trophy Guide</h1>
+    <p class="tagline">All 55 PlayStation 5 trophies of Grand Theft Auto VI — checklist, roadmap and a cited guide for every one. Works offline; nothing leaves your browser.</p>
+    <div class="progress" id="progress" aria-label="Progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">Loading…</div>
+    </div>
+    <nav class="views" aria-label="Views">
+      <button type="button" class="view-btn active" id="viewListBtn">Checklist</button>
+      <button type="button" class="view-btn" id="viewRoadmapBtn">Platinum roadmap</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="toolbar" aria-label="Tools">
+    <input type="search" id="searchBox" placeholder="Search a trophy by name…" aria-label="Search trophies">
+    <div class="filters" id="filters" role="group" aria-label="Filter by kind">
+      <button type="button" class="filter-btn active" data-filter="all">All 55</button>
+      <button type="button" class="filter-btn" data-filter="story">Story</button>
+      <button type="button" class="filter-btn" data-filter="missable">Missable</button>
+      <button type="button" class="filter-btn" data-filter="collectibles">Collectibles</button>
+      <button type="button" class="filter-btn" data-filter="activities">Activities</button>
+      <button type="button" class="filter-btn" data-filter="online">Online</button>
+    </div>
+    <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle"> Spoiler mode <span class="hint">hide story names until earned</span></label>
+    <div class="io">
+      <button type="button" id="exportBtn">Export progress</button>
+      <button type="button" id="importBtn">Import progress</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+      <button type="button" id="resetBtn" class="danger">Reset</button>
+    </div>
+  </section>
+
+  <section class="notice" id="onlineNotice">
+    <strong>No online trophies.</strong> All 55 trophies are single-player; none needs online play. The Online filter is here to show that — it finds nothing, by design. Sources: Sixshore, PowerPyx.
+  </section>
+
+  <section class="roadmap" id="roadmapSection" hidden>
+    <h2>Roadmap to the platinum — Vice Got a Price!</h2>
+    <p class="roadmap-intro">About 200 hours in total (Insider Gaming, via GTA Six Insider), with the story around 50 hours. The list is long, not hard: there are no difficulty trophies, no mission medals and no online trophies. Cheats switch off trophies and saving (GTABase, TechWiser), so leave cheats off for the whole run. The game has no mission replay and no New Game Plus (Output Lag) — keep a manual save at the start of every chapter and one before the final mission.</p>
+    <ol class="stages" id="stagesList"></ol>
+  </section>
+
+  <div class="columns">
+    <section class="list-col">
+      <h2 id="listHeading">Checklist</h2>
+      <p class="list-meta" id="listMeta"></p>
+      <ul class="trophy-list" id="trophyList"></ul>
+    </section>
+    <aside class="detail-col" id="detailPanel" aria-label="Trophy guide">
+      <p class="detail-empty" id="detailEmpty">Select a trophy to read its guide and its sources.</p>
+      <article class="detail" id="detailCard" hidden>
+        <div class="detail-grades"><span class="grade-badge" id="detailGrade"></span><span class="kind-tag" id="detailKind"></span><span class="missable-flag" id="detailMissable" hidden>Missable</span><span class="hidden-flag" id="detailHidden" hidden>Hidden on PS</span></div>
+        <h2 id="detailName"></h2>
+        <p class="detail-desc" id="detailDesc"></p>
+        <p class="detail-count" id="detailCount" hidden></p>
+        <h3>Guide</h3>
+        <p class="detail-guide" id="detailGuide"></p>
+        <p class="detail-source">Source: <a id="detailSourceLink" href="#" target="_blank" rel="noopener"></a></p>
+        <p class="detail-stage" id="detailStage"></p>
+        <label class="detail-earned"><input type="checkbox" id="detailEarned"> I earned this trophy</label>
+      </article>
+    </aside>
+  </div>
+
+  <footer class="sources">
+    <h2>Sources</h2>
+    <p>Names, descriptions and grades are the official list as PlayStation publishes it, as listed by Exophase and PSNProfiles before this guide was written (the two agree on every name, description and grade). Every guide is written in our own words for this guide; each one names where its facts come from.</p>
+    <ul>
+      <li><a href="https://press-start.com.au/news/2026/11/18/gta-6-trophy-list/" target="_blank" rel="noopener">Press Start — full trophy list, 18 Nov 2026</a></li>
+      <li><a href="https://outputlag.com/guides/gta-6-trophy-list/" target="_blank" rel="noopener">Output Lag — GTA 6 Trophy List (missable, no mission replay, ~200 h)</a></li>
+      <li><a href="https://sixshore.com/gta-6/guides/trophies-and-achievements/" target="_blank" rel="noopener">Sixshore — GTA 6 Trophy and Achievement List (roadmap, counts via PSNProfiles)</a></li>
+      <li><a href="https://egamers.io/gta-6-trophy-list-all-55-trophies-and-achievements-plus-the-hardest-ones/" target="_blank" rel="noopener">EGamers — GTA 6 Trophy List (GTABase and PowerPyx on the missable)</a></li>
+      <li><a href="https://www.gtavicecityhub.com/achievements" target="_blank" rel="noopener">GTA Vice City Hub — achievements</a></li>
+    </ul>
+    <p class="disclaimer">An unofficial fan guide. Grand Theft Auto, GTA and Leonida are trademarks of Rockstar Games / Take-Two Interactive. No Rockstar logo, artwork or screenshot is used here.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
